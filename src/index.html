@@ -1,37 +1,67 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <!-- build:css styles/popup-vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css css/main.css -->
-    <link href="css/main.css" rel="stylesheet">
-    <!-- endbuild -->
-  </head>
-  <body>
-        <div id="loginDiv"> 
-            <h4>Login to Addoo</h4>
-            <div growl inline="true"></div>
-            <p style="text-align:center;"> <img src="img/Addo-logo1.png" height="96" width="250"></img></p>
-            <input type="text" class="form-control" name="Username" id="user" placeholder="Username" required="" autofocus=""/>
-            <input type="password" class="form-control" name="Password" id="password" placeholder="Password" required="" />
-            <button class="btn btn-lg btn-warning btn-block" value="Login" id="login">Login</button>
-        </div>
-        <div id="loggedinuser" style="display:none">
-            Click <a href="">here</a> to record!
-        </div>    
+<head>
+  <meta charset="utf-8">
+  <!-- build:css styles/popup-vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css1 css/main.css -->
+  <link href="css/main.css" rel="stylesheet">
+  <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+  <link href="lib/css/font-awesome/css/font-awesome.css" rel="stylesheet">
+  <!-- endbuild -->
 
-    <!-- build:js js/all.js -->
-    <!-- endbuild -->    
-    <!-- bower:js -->
-    <!-- endbower -->
-    
+  <!-- build:css2 css/content.css -->
+  <!-- <link href="bower_components/jquery-modal/jquery.modal.css" rel="stylesheet"> -->
+  <link href="css/modal.css" rel="stylesheet">
+  <!-- endbuild -->
 
-    <!-- build:js js/popup.js -->
-    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="js/popup.js"></script>
-    <!-- endbuild -->
-  </body>
+</head>
+<body>
+  <div class="wrapper" id="addoo-body">  
+      <div id="addoo-loginDiv">
+        <h2 class="form-signin-heading" id="addoo-h2">Please login</h2>
+        <p style="text-align:center;" id="addoo-p"> <img id="addoo-logo" src="img/Addo-logo1.png" height="96" width="250"></img></p>
+        <input type="text" class="form-control" name="Username" id="addoo-user" placeholder="Email Address" required="" autofocus="" />
+        <input type="password" class="form-control" name="Password" id="addoo-password" placeholder="Password" required=""/>      
+        <br/>
+        <button class="btn btn-lg btn-warning btn-block" value="Login" id="addoo-login">Login</button>   
+    </div>
+    <div id="addoo-activity-record" style="display:none">
+        <span id="addoo-span"><a id="addoo-logout" class="addoo-logout" href="#" id="logout">Logout</a></span>
+        <p id="addoo-p1"><button type="button" class="btn btn-warning" id="addoo-record">Start Recording</button></p>
+    </div>   
+     <div id="addoo-activity-stoprecord" style="display:none">
+        <span id="addoo-span2"><a id="addoo-logout2" class="addoo-logout" href="#" id="logout2">Logout</a></span>
+        <p id="addoo-p2"><button type="button" class="btn btn-warning" id="addoo-stop-record">Stop Recording</button></p>
+        <span id="addoo-span3" style="display:none">
+          <input type="text" class="form-control" name="title" id="addoo-record-title" placeholder="Title" required="" autofocus="" />
+          <button class="btn btn-lg btn-warning btn-block" value="Save Recording" id="addoo-save-record">Save Recording</button>   
+        </span>  
+    </div>   
+</div>
+<!-- build:js js/all.js -->
+<!-- endbuild -->    
+<!-- bower:js -->
+<!-- endbower -->
+
+
+<!-- build:js1 js/popup.js -->
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="js/popup.js"></script>
+<!-- endbuild -->
+
+<!-- build:js2 js/script.js -->
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="bower_components/js-cookie/src/js.cookie.js"></script>
+<script type="text/javascript" src="lib/js/css-selector-generator/build/css-selector-generator.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/inject.js"></script>
+<script src="js/script.js"></script>
+
+<!-- endbuild -->
+
+</body>
 </html>

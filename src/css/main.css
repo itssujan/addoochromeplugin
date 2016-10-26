@@ -1,3 +1,18 @@
 body {
   padding: 20px;
+  width: 350px
+}
+
+.wrapper {
+	width:  320px
+}
+
+.form-signin {
+    max-width: 320px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.highlight {
+    background-color: yellow;
 }

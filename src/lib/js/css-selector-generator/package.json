@@ -1,0 +1,29 @@
+{
+  "name": "css-selector-generator",
+  "title": "CSS Selector Generator",
+  "version": "1.0.4",
+  "description": "JavaScript object that creates unique CSS selector for given element.",
+  "author": "Riki Fridrich <riki@fczbkk.com> (http://fczbkk.com)",
+  "license": "UNLICENSE",
+  "main": "build/css-selector-generator.js",
+  "scripts": {
+    "test": "grunt dev"
+  },
+  "devDependencies": {
+    "coffeelint": "1.15.7",
+    "grunt": "^1.0.1",
+    "grunt-bump": "^0.8.0",
+    "grunt-coffeelint": "^0.0.15",
+    "grunt-contrib-coffee": "^1.0.0",
+    "grunt-contrib-jasmine": "^1.0.3",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-conventional-changelog": "^6.1.0",
+    "load-grunt-tasks": "^3.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fczbkk/css-selector-generator.git"
+  },
+  "homepage": "https://github.com/fczbkk/css-selector-generator/"
+}

@@ -10,11 +10,13 @@ var gulp = require('gulp'),
 	RevAll = require('gulp-rev-all'),
 	replace = require('gulp-replace'),
 	gulpif = require('gulp-if'),
+	gulpUtil = require('gulp-util'),
     argv = require('yargs').argv;
 
 
 var paths = {
-	scripts: 'src/js/**/*.*',
+	allscripts: 'src/js/**/*.*',
+	scripts: 'src/js/core/**/*.*',
 	styles: 'src/css/**/*.*',
 	images: 'src/img/**/*.*',
 	index: 'src/index.html',
@@ -49,7 +51,7 @@ gulp.task('copy-bower_fonts', function () {
 /**
  * Handle custom files
  */
-gulp.task('build-custom', ['custom-images', 'custom-css', 'custom-js','copy-manifest', 'copy-locales']);
+gulp.task('build-custom', ['custom-images', 'custom-js','copy-manifest', 'copy-locales']);
 
 gulp.task('copy-manifest', function () {
 	return gulp.src(paths.manifest)
@@ -91,8 +93,8 @@ gulp.task('custom-css', function () {
  */
 gulp.task('watch', function () {
 	gulp.watch([paths.images], ['custom-images']);
-	// gulp.watch([paths.styles], ['custom-css']);
-	// gulp.watch([paths.scripts], ['custom-js']);
+	gulp.watch([paths.styles], ['usemin']);
+	gulp.watch([paths.allscripts], ['usemin']);
 	gulp.watch([paths.index], ['usemin']);
 });
 
@@ -114,9 +116,12 @@ gulp.task('watch', function () {
 gulp.task('usemin', function () {
 	return gulp.src(paths.index)
         .pipe(usemin({
-        	js: [minifyJs(), 'concat'],
-        	css: [minifyCss({ keepSpecialComments: 0 }), 'concat'],
+        	js1: [minifyJs(), 'concat'],
+        	js2: [minifyJs(), 'concat'],
+        	css1: [minifyCss({ keepSpecialComments: 0 }), 'concat'],
+        	css2: [minifyCss({ keepSpecialComments: 0 }), 'concat'],
         }))
+        // .pipe(minifyJs().on('error', console.log)) // notice the error event here
         .pipe(gulp.dest('dist/'));
 });
 

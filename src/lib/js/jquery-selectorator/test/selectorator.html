@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jQuery Selectorator Test Suite</title>
+  <!-- Load local jQuery. This can be overridden with a ?jquery=___ param. -->
+  <script src="../libs/jquery-loader.js"></script>
+  <!-- Load local QUnit. -->
+  <link rel="stylesheet" href="../libs/qunit/qunit.css" media="screen">
+  <script src="../libs/qunit/qunit.js"></script>
+  <!-- Load local lib and tests. -->
+  <script src="../src/selectorator.js"></script>
+  <script src="selectorator_test.js"></script>
+  <!-- Removing access to jQuery and $. But it'll still be available as _$, if
+       you REALLY want to mess around with jQuery in the console. REMEMBER WE
+       ARE TESTING A PLUGIN HERE, THIS HELPS ENSURE BEST PRACTICES. REALLY. -->
+  <script>window._$ = jQuery.noConflict(true);</script>
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture">
+    <canvas></canvas>
+    <div id="test-list">
+      <ul class="list1">
+        <li class="item"><a href="http://www.apple.com/">Apple</a></li>
+        <li class="item"><a href="http://www.microsoft.com/" id="link-microsoft">Microsoft</a></li>
+        <li class="item yahoo-item"><a href="http://www.yahoo.com/" class="link-yahoo">Yahoo</a></li>
+        <li class="item"><a href="http://www.google.com/" name="google">Google</a></li>
+      </ul>
+    </div>
+    <div id="duplcate-test">
+      <span id="dup">foo</span>
+      <span id="dup">bar</span>
+      <a name="dup1">foo</a>
+      <a name="dup1">bar</a>
+    </div>
+    <div id="test-nested">
+      <div class="body-copy">
+        <p>A</p>
+        <p>B</p>
+        <p>C</p>
+        <div class="body-copy">
+          <p>D</p>
+          <p>E</p>
+          <p>F</p>
+        </div>
+      </div>
+    </div>
+    <div id="ipsum">
+      <span>Lorem</span>
+      <strong>ipsum</strong>
+      dolor
+      <span>sit</span>
+      <span>amet,</span>
+      <strike>consectetur adipiscing elit.</strike>
+    </div>
+    <div class="foo">
+      <p id="bar">
+        <a href="http://ngs.io" name="qux1">Yay</a>
+        <a href="http://ngsdev.org" name="qux2">Hoo</a>
+      </p>
+    </div>
+    <div id="test-empty-attributes">
+      <p id="">Empty id</p>
+      <p class="">Empty id</p>
+    </div>
+  </div>
+</body>
+</html>

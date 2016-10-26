@@ -4,34 +4,41 @@
   "manifest_version": 2,
   "description": "Addoo Chrome Extension Desc",
   "icons": {
-    "16": "img/test.png",
-    "128": "img/test.png"
+    "48": "img/addoo48.png",
+    "128": "img/addoo128.png"
   },
   "default_locale": "en",
   "background": {
     "scripts": [
-      // "scripts/chromereload.js",
       "js/background.js"
     ],
-    "persistent": true
-
+    "persistent": false
   },
-  "permissions": ["activeTab","https://app.addoo.io/*"]  ,
+  "permissions": [
+    "storage",
+    "tabs",
+    "cookies", 
+    "<all_urls>"
+    ]  ,
   "page_action": {
     "default_icon": {
-      "19": "img/addoo-logo.png",
-      "38": "img/addoo-logo.png"
+      "48": "img/addoo48.png",
+      "128": "img/addoo128.png"
     },
     "default_title": "AddooChromePlugin",
     "default_popup": "index.html"
   },
+  "web_accessible_resources": ["css/content.css","js/script.js"],
   "content_scripts": [
     {
       "matches": [
-        "https://app.addoo.io/*"
+        "https://app.addoo.io/*","http://localhost:8888/*","https://*.sharefiletest.com/*","https://*.sharefile.com/*"
       ],
       "js": [
-        "js/inject.js","js/script.js"
+        "js/script.js"
+      ],
+      "css" : [
+        "css/content.css"
       ]
     }
   ]

@@ -54,7 +54,9 @@
     "gulp-rev-all": "^0.8.24",
     "gulp-uglify": "^1.5.4",
     "gulp-usemin": "^0.3.23",
+    "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.9",
+    "jquery": "^3.1.0",
     "run-sequence": "^1.2.2",
     "yargs": "^4.8.1"
   }
